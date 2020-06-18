@@ -1,0 +1,135 @@
+@mixin dimension {
+    height: 400px;
+    width: 600px;
+}
+
+.fx-signals{
+    @include dimension;
+    .signal{
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        opacity: 1;
+        transition: all 200ms ease-in-out;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .pair{
+            font-weight: 700;
+        }
+
+        .summary{
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .count{
+            display: flex;
+            flex-direction: row;
+            font-weight: 700;
+            .buy{
+                margin: 10px;
+                color: #00BAEC;
+            }
+            .sell{
+                margin: 10px;
+                color: tomato;
+            }
+            .neutral{
+                margin: 10px;
+                color: gray;
+            }
+        }
+
+        &:hover{
+            opacity: 0;
+        }
+
+        // display: none;
+    }
+
+    .indicator-header-wrapper{
+        height: inherit;
+        width: inherit;
+        .Header{
+            display: grid;
+            grid-template-columns: 375px 100px 100px;
+            grid-template-rows: auto;
+            justify-items: start;
+            align-items: center;
+            h3{
+                padding: 10px;
+            }
+        }
+    
+        .indicator-container{
+            margin-top: 20px;
+            height: max-content;
+            .indicator{
+                display: grid;
+                grid-template-columns: 375px 100px 100px;
+                grid-template-rows: auto;
+                justify-items: start;
+                align-items: center;
+                
+        
+                .name, .value, .action{
+                    padding: 10px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.action, .summary{
+    &.buy{
+        color: #00BAEC;
+    }
+    &.sell{
+        color: tomato;
+    }
+    &.neutral{
+        color: gray;
+    }
+}
+
+.error{
+    width: 600px;
+    height: 400px;
+    line-height: 1.6;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .spinner{
+        height: 50px;
+        width: 50px;
+        background: transparent;
+        border: 4px solid  #00BAEC;
+        border-radius: 50px;
+        border-top: 4px solid  #ffffff;
+        animation: spin .5s linear infinite;
+    }
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

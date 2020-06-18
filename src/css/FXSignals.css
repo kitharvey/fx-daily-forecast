@@ -1,0 +1,189 @@
+.fx-signals {
+  height: 400px;
+  width: 600px;
+}
+
+.fx-signals .signal {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fx-signals .signal .pair {
+  font-weight: 700;
+}
+
+.fx-signals .signal .summary {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.fx-signals .signal .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: 700;
+}
+
+.fx-signals .signal .count .buy {
+  margin: 10px;
+  color: #00BAEC;
+}
+
+.fx-signals .signal .count .sell {
+  margin: 10px;
+  color: tomato;
+}
+
+.fx-signals .signal .count .neutral {
+  margin: 10px;
+  color: gray;
+}
+
+.fx-signals .signal:hover {
+  opacity: 0;
+}
+
+.fx-signals .indicator-header-wrapper {
+  height: inherit;
+  width: inherit;
+}
+
+.fx-signals .indicator-header-wrapper .Header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 375px 100px 100px;
+      grid-template-columns: 375px 100px 100px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fx-signals .indicator-header-wrapper .Header h3 {
+  padding: 10px;
+}
+
+.fx-signals .indicator-header-wrapper .indicator-container {
+  margin-top: 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.fx-signals .indicator-header-wrapper .indicator-container .indicator {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 375px 100px 100px;
+      grid-template-columns: 375px 100px 100px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fx-signals .indicator-header-wrapper .indicator-container .indicator .name, .fx-signals .indicator-header-wrapper .indicator-container .indicator .value, .fx-signals .indicator-header-wrapper .indicator-container .indicator .action {
+  padding: 10px;
+  font-weight: 500;
+}
+
+.action.buy, .summary.buy {
+  color: #00BAEC;
+}
+
+.action.sell, .summary.sell {
+  color: tomato;
+}
+
+.action.neutral, .summary.neutral {
+  color: gray;
+}
+
+.error {
+  width: 600px;
+  height: 400px;
+  line-height: 1.6;
+  text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader {
+  width: 600px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader .spinner {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  border: 4px solid  #00BAEC;
+  border-radius: 50px;
+  border-top: 4px solid  #ffffff;
+  -webkit-animation: spin .5s linear infinite;
+          animation: spin .5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=FXSignals.css.map */
