@@ -73,8 +73,8 @@
 .fx-signals .indicator-header-wrapper .Header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 375px 100px 100px;
-      grid-template-columns: 375px 100px 100px;
+  -ms-grid-columns: auto 20% 20%;
+      grid-template-columns: auto 20% 20%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   justify-items: start;
@@ -97,8 +97,8 @@
 .fx-signals .indicator-header-wrapper .indicator-container .indicator {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 375px 100px 100px;
-      grid-template-columns: 375px 100px 100px;
+  -ms-grid-columns: auto 20% 20%;
+      grid-template-columns: auto 20% 20%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   justify-items: start;
@@ -108,7 +108,7 @@
 }
 
 .fx-signals .indicator-header-wrapper .indicator-container .indicator .name, .fx-signals .indicator-header-wrapper .indicator-container .indicator .value, .fx-signals .indicator-header-wrapper .indicator-container .indicator .action {
-  padding: 10px;
+  padding: 13.5px;
   font-weight: 500;
 }
 
@@ -125,8 +125,8 @@
 }
 
 .error {
-  width: 600px;
   height: 400px;
+  width: 600px;
   line-height: 1.6;
   text-align: justify;
   display: -webkit-box;
@@ -184,6 +184,15 @@
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media all and (max-width: 900px) {
+  .fx-signals, .loader, .error {
+    width: 100%;
+  }
+  .fx-signals .signal, .fx-signals .indicator-header-wrapper, .loader .signal, .loader .indicator-header-wrapper, .error .signal, .error .indicator-header-wrapper {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=FXSignals.css.map */

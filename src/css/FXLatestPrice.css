@@ -12,13 +12,30 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.FXLatestPriceComponent {
-  padding: 20px;
+  margin: auto;
+  min-height: 80vh;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+}
+
+.FXLatestPriceComponent {
+  height: 715px;
+  width: 400px;
+}
+
+.FXLatestPriceComponent .Header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
 }
 
 .FXSignalChartComponent {
@@ -29,6 +46,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .latestPriceContainer {
@@ -44,8 +67,8 @@
 .latestPriceContainer .latestPrice {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   justify-items: center;
@@ -57,7 +80,9 @@
 }
 
 .latestPriceContainer .latestPrice.active {
-  background: rgba(0, 186, 236, 0.2);
+  background: #ecfbff;
+  -webkit-backdrop-filter: blur(0.8);
+          backdrop-filter: blur(0.8);
 }
 
 .latestPriceContainer .latestPrice:hover {
@@ -81,41 +106,25 @@
   color: tomato;
 }
 
-.Header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  padding: 10px;
-}
-
-footer small {
-  font-size: .8em;
-  text-align: center;
+@media all and (max-width: 900px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .FXLatestPriceComponent {
+    width: 100%;
+  }
+  .container .FXSignalChartComponent {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=FXLatestPrice.css.map */

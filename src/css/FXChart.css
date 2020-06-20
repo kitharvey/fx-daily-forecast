@@ -1,11 +1,12 @@
 .chart {
   width: 600px;
-  height: 250px;
+  height: 300px;
+  padding: 10px;
 }
 
 .loader {
   width: 600px;
-  height: 250px;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,25 +29,12 @@
           animation: spin .5s linear infinite;
 }
 
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+@media all and (max-width: 900px) {
+  .chart {
+    width: 100%;
   }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  .chart .apexcharts-svg {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=FXChart.css.map */

@@ -9,7 +9,7 @@ const FXLatestPrice = () => {
     const [pair, setPair] = useState('EUR/USD')
 
     const fetchFXLatestPriceAPI = () => {
-        const API = `https://fcsapi.com/api-v2/forex/latest?symbol=${pairs}&access_key=b05Bp18k1jkg0pVrjv11EhvQk0aseUUIO6ecMM1sJecSbP8M8G`
+        const API = `https://fcsapi.com/api-v2/forex/latest?symbol=${pairs}&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`
         const tempData = []
 
         setLatestPrices(null)
@@ -22,7 +22,10 @@ const FXLatestPrice = () => {
                     results['response'].map(data => tempData.push(data))
                     setLatestPrices(tempData)
                     }
-                }
+                },
+            (error) => {
+                console.log(error)
+            }
             )
     }
 
@@ -34,8 +37,7 @@ const FXLatestPrice = () => {
 
     return (
         <div className='container'>
-            <header> FX Daily Forecast</header>
-
+            
             {latestPrices && <div className = 'FXLatestPriceComponent'>
                 <div className = 'Header'>
                     <h3> Symbol </h3>
@@ -61,22 +63,8 @@ const FXLatestPrice = () => {
                 <FXSignals pair={pair}></FXSignals>
                 <FXChart pair={pair}></FXChart>
             </div>
-
-            <footer>
-                <small>
-                    Disclaimer:
-                    Prices, Market trends and signals are not designed for trading purpose, These signals are only for education or non-commercial purpose use. Data contained in this application/website is not necessarily real-time nor accurate and so prices may not be accurate and may differ from the actual market price, meaning prices are indicative and not appropriate for trading purposes. Therefore we doesn`t bear any responsibility for any trading losses you might incur as a result of using this data.
-                </small>
-            </footer>
-           
         </div>
-        
-        
         )
-       
-
-   
-    
 }
 
 export default FXLatestPrice

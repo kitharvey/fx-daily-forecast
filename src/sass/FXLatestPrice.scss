@@ -3,16 +3,29 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: auto;
+    min-height: 80vh;
+    height: max-content;
 }
 
 .FXLatestPriceComponent{
-    padding: 20px;
-    height: max-content;
+    height: 715px;
+    width: 400px;
+    .Header{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: auto;
+        justify-items: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
 }
 
 .FXSignalChartComponent{
     display: flex;
     flex-direction: column;
+    height: max-content;
+    width: max-content;
 }
 
 .latestPriceContainer{
@@ -20,14 +33,15 @@
     flex-direction: column;
     .latestPrice{
         display: grid;
-        grid-template-columns: 200px 200px 200px;
+        grid-template-columns: 33% 33% 33%;
         grid-template-rows: auto;
         justify-items: center;
         align-items: center;
         transition: all 200ms ease;
 
         &.active{
-            background: rgba(0, 186, 236, .2);
+            background: #ecfbff;
+            backdrop-filter: blur(0.8);
         }
 
         &:hover{
@@ -54,35 +68,26 @@
     }
 }
 
-.Header{
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: auto;
-    justify-items: center;
-    align-items: center;
-    margin-bottom: 10px;
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    padding: 10px;
-    small{
-        font-size: .8em;
-        text-align: center;
+@media all and (max-width: 900px){
+    .container{
+        flex-direction: column;
+        .FXLatestPriceComponent{
+            width: 100%;
+        }
+        .FXSignalChartComponent{
+            width: 100%;
+        }
     }
 }

@@ -8,7 +8,7 @@ const FXChart = ({pair}) => {
     const [series, setSeries] = useState(null);
     const options = {
         chart: {
-            id: "chart123",
+            id: "fx-chart",
             type: "line",
         },
         title: {
@@ -39,7 +39,7 @@ const FXChart = ({pair}) => {
     }
 
     const fetchFXAPI = (pair) => {
-        const API = `https://fcsapi.com/api-v2/forex/history?symbol=${pair}&period=1d&access_key=b05Bp18k1jkg0pVrjv11EhvQk0aseUUIO6ecMM1sJecSbP8M8G`
+        const API = `https://fcsapi.com/api-v2/forex/history?symbol=${pair}&period=1d&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`
         let tempOpen
         let tempPrice
         let tempClose
@@ -85,13 +85,11 @@ const FXChart = ({pair}) => {
                 <Chart
                     options = {options}
                     series = {series}
-                    height = '250'
-                    width = '600'
+                    height = '300'
+                    width = '100%'
                 />
             </div>}
-            
         </div>
-       
     )
 }
 
