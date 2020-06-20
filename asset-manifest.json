@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/fx-daily-forecast/static/css/main.af3b8750.chunk.css",
-    "main.js": "/fx-daily-forecast/static/js/main.b4ca45b9.chunk.js",
-    "main.js.map": "/fx-daily-forecast/static/js/main.b4ca45b9.chunk.js.map",
+    "main.css": "/fx-daily-forecast/static/css/main.4b1fcc92.chunk.css",
+    "main.js": "/fx-daily-forecast/static/js/main.6fcbdc67.chunk.js",
+    "main.js.map": "/fx-daily-forecast/static/js/main.6fcbdc67.chunk.js.map",
     "runtime-main.js": "/fx-daily-forecast/static/js/runtime-main.1f9fff69.js",
     "runtime-main.js.map": "/fx-daily-forecast/static/js/runtime-main.1f9fff69.js.map",
-    "static/js/2.51ea4069.chunk.js": "/fx-daily-forecast/static/js/2.51ea4069.chunk.js",
-    "static/js/2.51ea4069.chunk.js.map": "/fx-daily-forecast/static/js/2.51ea4069.chunk.js.map",
+    "static/js/2.a183ef30.chunk.js": "/fx-daily-forecast/static/js/2.a183ef30.chunk.js",
+    "static/js/2.a183ef30.chunk.js.map": "/fx-daily-forecast/static/js/2.a183ef30.chunk.js.map",
     "index.html": "/fx-daily-forecast/index.html",
-    "precache-manifest.1bd3f9164954d2bb5a4562205e4cb565.js": "/fx-daily-forecast/precache-manifest.1bd3f9164954d2bb5a4562205e4cb565.js",
+    "precache-manifest.2f463ad630e0f7f68dab395bded10c5d.js": "/fx-daily-forecast/precache-manifest.2f463ad630e0f7f68dab395bded10c5d.js",
     "service-worker.js": "/fx-daily-forecast/service-worker.js",
-    "static/css/main.af3b8750.chunk.css.map": "/fx-daily-forecast/static/css/main.af3b8750.chunk.css.map",
-    "static/js/2.51ea4069.chunk.js.LICENSE.txt": "/fx-daily-forecast/static/js/2.51ea4069.chunk.js.LICENSE.txt"
+    "static/css/main.4b1fcc92.chunk.css.map": "/fx-daily-forecast/static/css/main.4b1fcc92.chunk.css.map",
+    "static/js/2.a183ef30.chunk.js.LICENSE.txt": "/fx-daily-forecast/static/js/2.a183ef30.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1f9fff69.js",
-    "static/js/2.51ea4069.chunk.js",
-    "static/css/main.af3b8750.chunk.css",
-    "static/js/main.b4ca45b9.chunk.js"
+    "static/js/2.a183ef30.chunk.js",
+    "static/css/main.4b1fcc92.chunk.css",
+    "static/js/main.6fcbdc67.chunk.js"
   ]
 }
