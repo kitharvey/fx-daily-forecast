@@ -46,20 +46,20 @@ const FXLatestPrice = () => {
                 </div>
                 <div className = 'latestPriceContainer'>
                     {latestPrices.map(({id,symbol,price,change,chg_per}) => (
-                        <div className = {`latestPrice ${symbol === pair ? 'active' : ''}`} key={id} onClick = {handleOnClick}>
+                        <a href='#signal' className = {`latestPrice ${symbol === pair ? 'active' : ''}`} key={id} onClick = {handleOnClick}>
                             <div className = 'symbol'> {symbol} </div>
                             <div className = 'price'> {price} </div>
                             <div className = 'change'>
                                 <div className = {change>0 ? 'positive' : 'negative'}> {change} </div>
                                 <div className = {change>0 ? 'positive' : 'negative'}> {chg_per} </div>
                             </div>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>}
             
             
-            <div className = 'FXSignalChartComponent'>
+            <div id='signal' className = 'FXSignalChartComponent'>
                 <FXSignals pair={pair}></FXSignals>
                 <FXChart pair={pair}></FXChart>
             </div>
