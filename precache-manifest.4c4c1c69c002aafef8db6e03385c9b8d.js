@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7129a4be97a78dfb3d0c299301b7aa09",
+    "revision": "ddd92604d1f4d010c3b6f044772270c6",
     "url": "/fx-daily-forecast/index.html"
   },
   {
-    "revision": "17bed1aba4dc6b25d2b0",
-    "url": "/fx-daily-forecast/static/css/main.4b1fcc92.chunk.css"
+    "revision": "57b8fd35994851b5ba6d",
+    "url": "/fx-daily-forecast/static/css/main.3148e310.chunk.css"
   },
   {
     "revision": "80da6e8ee8bee974d021",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fx-daily-forecast/static/js/2.a183ef30.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "17bed1aba4dc6b25d2b0",
-    "url": "/fx-daily-forecast/static/js/main.6fcbdc67.chunk.js"
+    "revision": "57b8fd35994851b5ba6d",
+    "url": "/fx-daily-forecast/static/js/main.a08a9f29.chunk.js"
   },
   {
     "revision": "cbe43cf9c37e049fb01a",
