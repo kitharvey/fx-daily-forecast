@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import '../css/FXSignals.css'
+import '../sass/FXSignals.scss'
 
 const FXSignals = ({pair}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [summary, setSummary] = useState(null)
     const [error, setError] = useState(null)
+    const pairs = ('EUR/USD,AUD/NZD,EUR/GBP,AUD/CAD,CHF/JPY,USD/JPY,GBP/USD,AUD/USD,USD/CAD,USD/CHF,NZD/USD');
+
 
     const fetchAPI = (pair) => {
         const API = `https://fcsapi.com/api-v2/forex/indicators?symbol=${pair}&period=1d&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`
@@ -22,11 +24,12 @@ const FXSignals = ({pair}) => {
                     else {
                         setSummary(results['response'])
                     }
+                    console.log(results)
                 }
             )
     }
 
-    useEffect(() => fetchAPI(pair), [pair])
+    useEffect(() => fetchAPI(pairs), [pair])
 
     const colorAction = (action) => {
         if(!(action === undefined)) {

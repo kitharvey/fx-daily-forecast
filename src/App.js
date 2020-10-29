@@ -1,6 +1,6 @@
 import React from 'react';
 import FXLatestPrice from './FXChart/FXLatestPrice'
-import './css/App.css'
+import './sass/App.scss'
 
 function App() {
   return (

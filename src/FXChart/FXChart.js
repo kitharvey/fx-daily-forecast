@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts'
-import '../css/FXChart.css'
+import '../sass/FXChart.scss'
 
 const FXChart = ({pair}) => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -78,14 +78,14 @@ const FXChart = ({pair}) => {
     useEffect(() => fetchFXAPI(pair), [pair])
     
     return(
-        <div>
+        <div className = 'chart-wrapper'>
             {error && <div className='error'>{error}</div>}
             {!isLoaded && <div className = 'loader'> <div className='spinner'></div> </div>}
             {series && <div className = 'chart'>
                 <Chart
                     options = {options}
                     series = {series}
-                    height = '300'
+                    height = '100%'
                     width = '100%'
                 />
             </div>}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/FXLatestPrice.css'
+import '../sass/FXLatestPrice.scss'
 import FXChart from './FXChart'
 import FXSignals from './FXSignals'
 
@@ -46,14 +46,14 @@ const FXLatestPrice = () => {
                 </div>
                 <div className = 'latestPriceContainer'>
                     {latestPrices.map(({id,symbol,price,change,chg_per}) => (
-                        <a href='#signal' className = {`latestPrice ${symbol === pair ? 'active' : ''}`} key={id} onClick = {handleOnClick}>
+                        <div className = {`latestPrice ${symbol === pair ? 'active' : ''}`} key={id} onClick = {handleOnClick}>
                             <div className = 'symbol'> {symbol} </div>
                             <div className = 'price'> {price} </div>
                             <div className = 'change'>
                                 <div className = {change>0 ? 'positive' : 'negative'}> {change} </div>
                                 <div className = {change>0 ? 'positive' : 'negative'}> {chg_per} </div>
                             </div>
-                        </a>
+                        </div>
                     ))}
                 </div>
             </div>}
