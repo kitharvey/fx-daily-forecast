@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/fx-daily-forecast/precache-manifest.43d49b8c8dfc0d90237c0d0c83459a19.js"
+  "/fx-daily-forecast/precache-manifest.b0cd7ec476129c5594204d59b3dc95b7.js"
 );
 
 self.addEventListener('message', (event) => {
