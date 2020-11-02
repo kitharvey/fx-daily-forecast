@@ -5,18 +5,12 @@ object-assign
 */
 
 /*!
- * ApexCharts v3.19.2
- * (c) 2018-2020 Juned Chhipa
- * Released under the MIT License.
- */
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
 
-/*! svg.draggable.js - v2.2.2 - 2019-01-08
-* https://github.com/svgdotjs/svg.draggable.js
-* Copyright (c) 2019 Wout Fierens; Licensed MIT */
-
-/*! svg.filter.js - v2.0.2 - 2016-02-24
-* https://github.com/wout/svg.filter.js
-* Copyright (c) 2016 Wout Fierens; Licensed MIT */
+/*! decimal.js-light v2.5.1 https://github.com/MikeMcl/decimal.js-light/LICENCE */
 
 /** @license React v0.19.1
  * scheduler.production.min.js
