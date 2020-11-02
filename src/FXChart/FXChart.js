@@ -74,13 +74,15 @@ const FXChart = ({pair}) => {
     
     return(
         <div className = 'chart-wrapper'>
-            <h3> {`${pair} Daily Chart`}  </h3>
+            
             {error && <div className='error'>{error}</div>}
             {!isLoaded && <div className = 'loader'> <div className='spinner'></div> </div>}
             {series && <div className = 'chart'>
-                <ResponsiveContainer>
+                <h3> {`${pair} Daily Chart`}  </h3>
+                <ResponsiveContainer height={230}>
                     <AreaChart
                         data={series}
+                        margin={{top: 30, right: 5, left: 5}}
                     >
                     <defs>
                         <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
