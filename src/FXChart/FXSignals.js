@@ -5,7 +5,7 @@ const FXSignals = ({pair}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [summary, setSummary] = useState(null)
     const [error, setError] = useState(null)
-    const pairs = ('EUR/USD,AUD/NZD,EUR/GBP,AUD/CAD,CHF/JPY,USD/JPY,GBP/USD,AUD/USD,USD/CAD,USD/CHF,NZD/USD');
+    // const pairs = ('EUR/USD,AUD/NZD,EUR/GBP,AUD/CAD,CHF/JPY,USD/JPY,GBP/USD,AUD/USD,USD/CAD,USD/CHF,NZD/USD');
 
 
     const fetchAPI = (pair) => {
@@ -29,7 +29,7 @@ const FXSignals = ({pair}) => {
             )
     }
 
-    useEffect(() => fetchAPI(pairs), [pair])
+    useEffect(() => fetchAPI(pair), [pair])
 
     const colorAction = (action) => {
         if(!(action === undefined)) {

@@ -99,7 +99,7 @@ const FXChart = ({pair}) => {
                     <YAxis
                         hide={false}
                         domain={['dataMin', 'auto']}
-                        tickCount={21}
+                        tickCount={11}
                         // tickFormatter={formatXAxis}
                         strokeOpacity={0}
                         fillOpacity={1}
