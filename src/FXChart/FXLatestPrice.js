@@ -1,35 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
 import '../sass/FXLatestPrice.scss'
 import FXChart from './FXChart'
 import FXSignals from './FXSignals'
 
 const FXLatestPrice = () => {
     const pairs = ('EUR/USD,AUD/NZD,EUR/GBP,AUD/CAD,CHF/JPY,USD/JPY,GBP/USD,AUD/USD,USD/CAD,USD/CHF,NZD/USD');
-    const [latestPrices, setLatestPrices] = useState(null)
     const [pair, setPair] = useState('EUR/USD')
 
-    const fetchFXLatestPriceAPI = () => {
-        const API = `https://fcsapi.com/api-v2/forex/latest?symbol=${pairs}&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`
-        const tempData = []
-
-        setLatestPrices(null)
-
-        fetch(API)
-        .then(results => results.json())
-        .then(
-            (results) => {
-                if(!(results['response'] === undefined)) {
-                    results['response'].map(data => tempData.push(data))
-                    setLatestPrices(tempData)
-                    }
-                },
-            (error) => {
-                console.log(error)
-            }
-            )
-    }
-
-    useEffect(() => fetchFXLatestPriceAPI(), [])
+    const { data } = useQuery('fetLatestPrice', async() => {
+        const {data} = await axios.get(`https://fcsapi.com/api-v2/forex/latest?symbol=${pairs}&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`)
+        return await data.response
+    }  )
 
     const handleOnClick = (event) => {
         setPair(event.currentTarget.textContent.split(' ')[1])
@@ -38,14 +21,14 @@ const FXLatestPrice = () => {
     return (
         <div className='container'>
             
-            {latestPrices && <div className = 'FXLatestPriceComponent'>
+            {data && <div className = 'FXLatestPriceComponent'>
                 <div className = 'Header'>
                     <h3> Symbol </h3>
                     <h3> Price </h3>
                     <h3> Change </h3>
                 </div>
                 <div className = 'latestPriceContainer'>
-                    {latestPrices.map(({id,symbol,price,change,chg_per}) => (
+                    {data.map(({id,symbol,price,change,chg_per}) => (
                         <div className = {`latestPrice ${symbol === pair ? 'active' : ''}`} key={id} onClick = {handleOnClick}>
                             <div className = 'symbol'> {symbol} </div>
                             <div className = 'price'> {price} </div>

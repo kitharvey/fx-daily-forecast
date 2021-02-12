@@ -45,7 +45,6 @@ const FXChart = ({pair}) => {
                             })
                         }
                         setSeries(tempRate)
-                        // console.log(tempRate)
                     }
                 })
 
@@ -53,7 +52,6 @@ const FXChart = ({pair}) => {
     }
 
     useEffect(() => fetchFXAPI(pair), [pair])
-    useEffect(() => console.log(series), [series])
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload) {
@@ -100,10 +98,8 @@ const FXChart = ({pair}) => {
                         hide={false}
                         domain={['dataMin', 'auto']}
                         tickCount={11}
-                        // tickFormatter={formatXAxis}
                         strokeOpacity={0}
                         fillOpacity={1}
-                        // fill="rgb(0, 0, 0)"
                         width={40}
                         style={{
                         fontStyle: "normal",

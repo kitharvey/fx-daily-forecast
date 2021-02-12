@@ -1,9 +1,19 @@
 import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import FXLatestPrice from './FXChart/FXLatestPrice'
 import './sass/App.scss'
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+})
+
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <div className="App">
       <header> FX Daily Forecast</header>
       <FXLatestPrice/>
@@ -14,6 +24,7 @@ function App() {
         </small>
       </footer>
     </div>
+    </QueryClientProvider>
   );
 }
 
