@@ -1,46 +1,16 @@
 import axios from 'axios';
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { useQuery } from 'react-query';
 import '../sass/FXSignals.scss'
 
 const FXSignals = ({pair}) => {
-    // const [isLoaded, setIsLoaded] = useState(false);
-    // const [data, setSummary] = useState(null)
-    // const [error, setError] = useState(null)
-
-    const { data, isFetching, error } = useQuery( ['fetchSignal', pair], async() => {
+    const { data, isFetching } = useQuery( ['fetchSignal', pair], async() => {
         const {data} = await axios.get(`https://fcsapi.com/api-v2/forex/indicators?symbol=${pair}&period=1d&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`)
         return await data.response
     }  )
 
-    // const fetchAPI = (pair) => {
-    //     const API = `https://fcsapi.com/api-v2/forex/indicators?symbol=${pair}&period=1d&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`
-        
-    //     setIsLoaded(false)
-    //     setSummary(null)
-    //     setError(null)
-
-    //     fetch(API)
-    //         .then(results => results.json())
-    //         .then(
-    //             (results) => {
-    //                 setIsLoaded(true);
-    //                 if(results['response'] === undefined) setError('Access blocked. Restriction remove after 1 minute.')
-    //                 else {
-    //                     setSummary(results['response'])
-    //                 }
-    //                 console.log(results)
-    //             }
-    //         )
-    // }
-
-    // useEffect(() => fetchAPI(pair), [pair])
-
-    // console.log(data)
-
     const colorAction = (action) => {
         if(!(action === undefined)) {
-            console.log(action.includes('Buy'), action)
             if (action.includes('Buy')) return 'buy'
             else if (action.includes('Sell')) return 'sell'
             else return 'neutral'
@@ -49,8 +19,7 @@ const FXSignals = ({pair}) => {
 
     return(
         <div className='fx-signal-component'>
-            {/* {error && <div className='error'>Access blocked. Restriction remove after 1 minute.</div>} */}
-            {isFetching
+        {isFetching
             ? <div className = 'loader'> <div className='spinner'></div> </div>
             : !data ? <div className='error'>Access blocked. Restriction remove after 1 minute.</div>
                     : <div className = 'fx-signals'>
