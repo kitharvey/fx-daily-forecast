@@ -9,7 +9,7 @@ const FXLatestPrice = () => {
     const pairs = ('EUR/USD,AUD/NZD,EUR/GBP,AUD/CAD,CHF/JPY,USD/JPY,GBP/USD,AUD/USD,USD/CAD,USD/CHF,NZD/USD');
     const [pair, setPair] = useState('EUR/USD')
 
-    const { data } = useQuery('fetLatestPrice', async() => {
+    const { data } = useQuery('fetchLatestPrice', async() => {
         const {data} = await axios.get(`https://fcsapi.com/api-v2/forex/latest?symbol=${pairs}&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`)
         return await data.response
     }  )
@@ -42,10 +42,10 @@ const FXLatestPrice = () => {
             </div>}
             
             
-            <div id='signal' className = 'FXSignalChartComponent'>
+            {data && <div id='signal' className = 'FXSignalChartComponent'>
                 <FXSignals pair={pair}></FXSignals>
                 <FXChart pair={pair}></FXChart>
-            </div>
+            </div>}
         </div>
         )
 }
