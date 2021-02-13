@@ -3,20 +3,20 @@ import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import '../sass/FXLatestPrice.scss'
 import FXChart from './FXChart'
-import FXSignals from './FXSignals'
+// import FXSignals from './FXSignals'
 
 const FXLatestPrice = () => {
-    const pairs = ('EUR/USD,AUD/NZD,EUR/GBP,AUD/CAD,CHF/JPY,USD/JPY,GBP/USD,AUD/USD,USD/CAD,USD/CHF,NZD/USD');
     const [pair, setPair] = useState('EUR/USD')
 
     const { data } = useQuery('fetchLatestPrice', async() => {
-        const {data} = await axios.get(`https://fcsapi.com/api-v2/forex/latest?symbol=${pairs}&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`)
+        const {data} = await axios.get(`https://fcsapi.com/api-v3/forex/latest?symbol=all_forex&access_key=b05Bp18k1jkg0pVrjv11EhvQk0aseUUIO6ecMM1sJecSbP8M8G`)
+        console.log(data.response)
         return await data.response
     }  )
 
-    const handleOnClick = (event) => {
-        setPair(event.currentTarget.textContent.split(' ')[1])
-    }
+    // const handleOnClick = (event) => {
+    //     setPair(event.currentTarget.textContent.split(' ')[1])
+    // }
 
     return (
         <div className='container'>
@@ -28,13 +28,13 @@ const FXLatestPrice = () => {
                     <h3> Change </h3>
                 </div>
                 <div className = 'latestPriceContainer'>
-                    {data.map(({id,symbol,price,change,chg_per}) => (
-                        <div className = {`latestPrice ${symbol === pair ? 'active' : ''}`} key={id} onClick = {handleOnClick}>
-                            <div className = 'symbol'> {symbol} </div>
-                            <div className = 'price'> {price} </div>
+                    {data.map(({id,s,c,ch,cp}) => (
+                        <div className = {`latestPrice ${s === pair ? 'active' : ''}`} key={id} onClick = {() => setPair(s)}>
+                            <div className = 'symbol'>{s}</div>
+                            <div className = 'price'>{parseFloat(c).toFixed(4)}</div>
                             <div className = 'change'>
-                                <div className = {change>0 ? 'positive' : 'negative'}> {change} </div>
-                                <div className = {change>0 ? 'positive' : 'negative'}> {chg_per} </div>
+                                <div className = {parseFloat(ch).toFixed(4)>0 ? 'positive' : 'negative'}>{parseFloat(ch).toFixed(4)}</div>
+                                <div className = {parseFloat(cp).toFixed(2)>0 ? 'positive' : 'negative'}>{parseFloat(cp).toFixed(2)}%</div>
                             </div>
                         </div>
                     ))}
@@ -43,7 +43,7 @@ const FXLatestPrice = () => {
             
             
             {data && <div id='signal' className = 'FXSignalChartComponent'>
-                <FXSignals pair={pair}></FXSignals>
+                {/* <FXSignals pair={pair}></FXSignals> */}
                 <FXChart pair={pair}></FXChart>
             </div>}
         </div>

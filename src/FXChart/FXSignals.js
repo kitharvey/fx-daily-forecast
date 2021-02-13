@@ -5,8 +5,8 @@ import '../sass/FXSignals.scss'
 
 const FXSignals = ({pair}) => {
     const { data, isFetching } = useQuery( ['fetchSignal', pair], async() => {
-        const {data} = await axios.get(`https://fcsapi.com/api-v2/forex/indicators?symbol=${pair}&period=1d&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`)
-        console.log(data.response)
+        const {data} = await axios.get(`https://fcsapi.com/api-v3/forex/indicators?symbol=${pair}&period=1d&access_key=b05Bp18k1jkg0pVrjv11EhvQk0aseUUIO6ecMM1sJecSbP8M8G`)
+        console.log(data)
         return await data.response
     }  )
 

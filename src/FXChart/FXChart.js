@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 // import Chart from 'react-apexcharts'
 import { Area,
@@ -13,13 +13,12 @@ import '../sass/FXChart.scss'
 
 const FXChart = ({pair}) => {
     const { data, isFetching } = useQuery(['fetchChart', pair], async() => {
-        const {data} = await axios.get(`https://fcsapi.com/api-v2/forex/history?symbol=${pair}&period=1d&access_key=32wsOaXpTRGNGkWDStdRRt0t6csigLrH5FV4qZjHe2cWljQy2E`)
-        console.log(data.response)
-        return await data.response
+        const {data} = await axios.get(`https://fcsapi.com/api-v3/forex/history?symbol=${pair}&period=1d&access_key=b05Bp18k1jkg0pVrjv11EhvQk0aseUUIO6ecMM1sJecSbP8M8G`)
+        return await data.response ? Object.values(data.response) : null
     }  )
 
     const getPrice = ({o,c,h,l, tm}) => {
-            return {date: tm, price: ((parseFloat(o) + parseFloat(c) + parseFloat(h) + parseFloat(l))/4).toFixed(4)}
+        return {date: tm, price: ((parseFloat(o) + parseFloat(c) + parseFloat(h) + parseFloat(l))/4).toFixed(4)}
     }
 
     const CustomTooltip = ({ active, payload }) => {
@@ -42,10 +41,10 @@ const FXChart = ({pair}) => {
             : !data ? <div className='error'>Access blocked. Restriction remove after 1 minute.</div>
                 :   <div className = 'chart'>
                         <h3> {`${pair} Daily Chart`}  </h3>
-                        <ResponsiveContainer height={230}>
+                        <ResponsiveContainer height='90%' >
                             <AreaChart
                                 data={data.map( ( price ) => getPrice(price) )}
-                                margin={{top: 30, right: 5, left: 5}}
+                                margin={{top: 0, right: 5, left: 5}}
                             >
                             <defs>
                                 <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
@@ -62,7 +61,8 @@ const FXChart = ({pair}) => {
                             <YAxis
                                 hide={false}
                                 domain={['dataMin', 'auto']}
-                                tickCount={11}
+                                tickCount={10}
+                                interval={0}
                                 strokeOpacity={0}
                                 fillOpacity={1}
                                 width={40}
